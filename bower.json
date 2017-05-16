@@ -1,0 +1,17 @@
+{
+  "name": "cordant",
+  "description": "Cordant code challenge",
+  "main": "server.js",
+  "authors": [
+    "JM McGhee"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/OwlMan77/cordantCodeChallenge",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
