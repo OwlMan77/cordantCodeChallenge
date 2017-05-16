@@ -1,0 +1,10 @@
+const mongoose        = require('mongoose');
+
+const candidateSchema = new mongoose.Schema({
+  name: { type: String, trim: true, required: true},
+  image: {type: String},
+  postcode: {type: String, maxlength: 9},
+  modeOfTransport: [{nameOfTransport: {type: String, trim: true}, speed:{type: Number}}]
+});
+
+module.exports = mongoose.model('Candidate', candidateSchema);
