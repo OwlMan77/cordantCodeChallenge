@@ -18,7 +18,7 @@ function candidatesIndex(req, res){
 function candidatesShow(req, res){
   Candidate.findById(req.params.id, (err, show) => {
     if (err) return res.status(500).json({ success: false, message: err})
-    if(!Candidate) return res.status(500).json({success: false, message: 'Person does not exist here'})
+    if(!candidate) return res.status(500).json({success: false, message: 'Person does not exist here'})
     return res.stat(200).json(candidate);
   })
 }

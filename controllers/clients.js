@@ -16,7 +16,16 @@ function clientsCreate(req, res){
   });
 };
 
+function clientsShow(req, res){
+  Client.findById(req.params.id, (err, show) => {
+    if (err) return res.status(500).json({ success: false, message: err})
+    if(!client) return res.status(500).json({success: false, message: 'Person does not exist here'})
+    return res.stat(200).json(client);
+  })
+}
+
 module.exports = {
   index: clientIndex,
-  create: clientsCreate
+  create: clientsCreate,
+  show: clientsShow
 };
