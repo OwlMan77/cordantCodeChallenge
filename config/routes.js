@@ -10,7 +10,10 @@ router.route('/')
 router.route('/clients')
   .get(clients.index);
   .post(clients.create);
-
+router.route('/clients/:id')
+  .get(candidates.show)
+  .put(candidates.update)
+  .delete(candidates.delete);
 
 router.route('/candidates')
   .get(candidates.index)
