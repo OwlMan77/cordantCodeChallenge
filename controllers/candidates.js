@@ -29,10 +29,17 @@ function candidatesUpdate(req, res){
   })
 }
 
+function candidateDelete(req, res) {
+  candidate.findByIdAndRemove(req.params.id, err => {
+    if (err) return res.status(500).json({ success: false, message: err });
+    return res.status(204).json({ success: true });
+  });
+}
 
 module.exports = {
   create: candidatesCreate,
   index: candidatesIndex,
   show: candidatesShow,
-  update: candidatesUpdate
+  update: candidatesUpdate,
+  delete: candidateDelete
 }
