@@ -7,6 +7,11 @@ const clients     = require('../controllers/clients')
 router.route('/')
   .get(clients.index);
 
+router.route('/clients')
+  .get(clients.index);
+  .post(clients.create);
+
+
 router.route('/candidates')
   .get(candidates.index)
   .post(candidates.create);
