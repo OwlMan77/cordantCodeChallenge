@@ -7,6 +7,7 @@ function clientIndex(req, res){
   });
 }
 
+
 module.exports = {
   index: clientIndex,
 };
