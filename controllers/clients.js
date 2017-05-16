@@ -24,8 +24,17 @@ function clientsShow(req, res){
   })
 }
 
+function clientsUpdate(req, res){
+  Client.findByIdAndUpdate(req.params.id, req.body.clients, (err, client) => {
+    if (err) return res.status(500).json({ success: false, message: err });
+    if (!client) return res.status(500).json({ success: false, message: 'No client found' });
+    return res.status(204).json({ success: true });
+  })
+}
+
 module.exports = {
   index: clientIndex,
   create: clientsCreate,
-  show: clientsShow
+  show: clientsShow,
+  update: clientsUpdate
 };
