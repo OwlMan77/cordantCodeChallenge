@@ -14,11 +14,11 @@ mongoose.connect(config.db, () => {
   console.log(`Connected to ${config.db}`);
 });
 
-// Setting up our middleware
+// Setting up our
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(cors());
 app.use(routes);
 
 // Listens on port

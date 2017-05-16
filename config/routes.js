@@ -12,13 +12,13 @@ router.route('/')
   .get(clients.index);
 
 router.route('/clients')
-  .get(clients.index);
+  .get(clients.index)
   .post(clients.create);
 
 router.route('/clients/:id')
-  .get(candidates.show)
-  .put(candidates.update)
-  .delete(candidates.delete);
+  .get(clients.show)
+  .put(clients.update)
+  .delete(clients.delete);
 
 
 //Candidates routes
@@ -32,4 +32,4 @@ router.route('/candidates/:id')
   .delete(candidates.delete);
 
 
-module.export = router;
+module.exports = router;

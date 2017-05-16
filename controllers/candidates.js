@@ -1,12 +1,11 @@
 const Candidate  = require('../models/candidate');
 
 function candidatesCreate(req, res){
-  const candidate = new Candidate(req.body.candidate);
-
-  candidate.save((err, candidate) => {
-    if(err) return res.status(500).json(err);
-    return res.status(201).json(candidate);
-  });
+  Candidate.create(req.body, (err, candidate) => {
+      if (err) return res.status(500).json({ success: false, message: err });
+      if (!candidate) return res.status(500).json({ success: false, message: 'Please send the correct information to create a candidate.' });
+      return res.status(201).json(candidate);
+    });
 };
 
 function candidatesIndex(req, res){
@@ -16,10 +15,10 @@ function candidatesIndex(req, res){
   });
 }
 function candidatesShow(req, res){
-  Candidate.findById(req.params.id, (err, show) => {
+  Candidate.findById(req.params.id, (err, candidate) => {
     if (err) return res.status(500).json({ success: false, message: err})
     if(!candidate) return res.status(500).json({success: false, message: 'Person does not exist here'})
-    return res.stat(200).json(candidate);
+    return res.status(200).json(candidate);
   })
 }
 
