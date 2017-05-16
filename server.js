@@ -7,6 +7,7 @@ const cors       = require('cors');
 const app        = express();
 
 const config     = require('./config/config');
+const routes     = require('./config/routes')
 
 // Connects to our database
 mongoose.connect(config.db, () => {
@@ -18,6 +19,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
+app.use(routes);
 
 // Listens on port
 app.listen(config.port, () => {
