@@ -2,8 +2,10 @@ const express    = require('express');
 const router     = express.Router();
 
 const candidates = require('../controllers/candidates');
+const clients     = require('../controllers/clients')
 
 router.route('/')
+  .get(clients.index);
 
 router.route('/candidates')
   .get(candidates.index)
