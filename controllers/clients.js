@@ -32,9 +32,17 @@ function clientsUpdate(req, res){
   })
 }
 
+function clientDelete(req, res) {
+  client.findByIdAndRemove(req.params.id, err => {
+    if (err) return res.status(500).json({ success: false, message: err });
+    return res.status(204).json({ success: true });
+  });
+}
+
 module.exports = {
   index: clientIndex,
   create: clientsCreate,
   show: clientsShow,
-  update: clientsUpdate
+  update: clientsUpdate,
+  delete: clientDelete
 };
