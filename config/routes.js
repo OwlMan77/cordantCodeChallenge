@@ -4,10 +4,9 @@ const router  = express.Router();
 const candidates = require('../controllers/candidates');
 
 router.route('/')
-  .get(candidates.index);
 router.route('/users')
-  .get(users.index)
-  .post(users.create);
+  .get(candidates.index)
+  .post(candidates.create);
 
 
 module.export = router;
