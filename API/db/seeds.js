@@ -20,7 +20,8 @@ Candidates.collection.drop();
 
 
 async.waterfall([
-  createClients
+  createClients,
+  createCandidates
 ], function(err) {
   if (err) console.log(err);
   console.log('Seeding is complete');
@@ -44,6 +45,34 @@ function createClients(done){
       name: 'Transize',
       image: 'https://yt3.ggpht.com/-xOb_ezWTKr0/AAAAAAAAAAI/AAAAAAAAAAA/kZH4wJ2soqM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
       postcode: 'NW8 0DU'
+    },
+  ]
+  bluebird.map(clients, client => {
+  return Client.create(client);
+}).then(() => {
+  done(null);
+});
+}
+
+function createCandidates(done){
+  const candidates = [
+    {
+      name: 'Nick',
+      image: 'http://www.placecage.com/200/300',
+      postcode: 'NW9 4BQ',
+      modeOfTransport: { name: 'Car', speed: 38}
+    },
+    {
+      name: 'Patrick',
+      image: 'http://www.placecage.com/200/300',
+      postcode: 'NW3 6UT',
+      modeOfTransport: { name: 'Car', speed: 38}
+    },
+    {
+      name: 'Oscar',
+      image: 'http://www.placecage.com/200/300',
+      postcode: 'NW4 4NH',
+      modeOfTransport: { name: 'Car', speed: 38}
     },
   ]
   bluebird.map(clients, client => {
