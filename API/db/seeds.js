@@ -77,7 +77,7 @@ function createCandidates(done){
     },
   ]
   bluebird.map(candidates, candidate => {
-  return Client.create(candidate);
+  return Candidate.create(candidate);
 }).then(() => {
   done(null);
 });
