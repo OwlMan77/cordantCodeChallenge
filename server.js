@@ -6,8 +6,8 @@ const mongoose   = require('mongoose');
 const cors       = require('cors');
 const app        = express();
 
-const config     = require('./config/config');
-const routes     = require('./config/routes')
+const config     = require('./API/config/config');
+const routes     = require('./API/config/routes')
 
 // Connects to our database
 mongoose.connect(config.db, () => {
