@@ -1,5 +1,5 @@
 <section>
-  <div ng-repeat="client in clientIndex.clients">
+  <div ui-sref="ClientPage({id: client._id})" ng-repeat="client in clientIndex.clients">
     {{client.name}}
   </div>
 </section>
