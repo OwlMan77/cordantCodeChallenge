@@ -18,7 +18,17 @@ const Candidates  =  require('../model/candidate.js');
 Client.collection.drop();
 Candidates.collection.drop();
 
-function createClient(done){
+
+async.waterfall([
+  createClients
+], function(err) {
+  if (err) console.log(err);
+  console.log('Seeding is complete');
+  return process.exit();
+});
+
+//function to create Clients
+function createClients(done){
   const clients = [
     {
       name: 'Codoo',
@@ -36,4 +46,9 @@ function createClient(done){
       postcode: 'NW8 0DU'
     },
   ]
+  bluebird.map(clients, client => {
+  return Client.create(client);
+}).then(() => {
+  done(null);
+});
 }
