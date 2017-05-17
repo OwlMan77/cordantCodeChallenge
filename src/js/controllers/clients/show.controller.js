@@ -8,6 +8,6 @@ function showCtrl(Client, $stateParams){
   Client
   .get($stateParams)
   .$promise.then(response => {
-    vm.user = response;
+    vm.client = response;
   });
 }
