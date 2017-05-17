@@ -12,7 +12,7 @@ mongoose.connect(config.db);
 
 //Models
 const Client      =  require('../models/client.js');
-const Candidates  =  require('../model/candidate.js');
+const Candidates  =  require('../models/candidate.js');
 
 //drop the database before seeding
 Client.collection.drop();
@@ -46,7 +46,8 @@ function createClients(done){
       image: 'https://yt3.ggpht.com/-xOb_ezWTKr0/AAAAAAAAAAI/AAAAAAAAAAA/kZH4wJ2soqM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
       postcode: 'NW8 0DU'
     },
-  ]
+  ];
+
   bluebird.map(clients, client => {
   return Client.create(client);
 }).then(() => {
@@ -75,8 +76,8 @@ function createCandidates(done){
       modeOfTransport: { name: 'Car', speed: 38}
     },
   ]
-  bluebird.map(clients, client => {
-  return Client.create(client);
+  bluebird.map(candidates, candidate => {
+  return Client.create(candidate);
 }).then(() => {
   done(null);
 });
