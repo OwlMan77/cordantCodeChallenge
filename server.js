@@ -14,12 +14,14 @@ mongoose.connect(config.db, () => {
   console.log(`Connected to ${config.db}`);
 });
 
-// Setting up our
+// Setting up our middleware
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(routes);
+app.use('/api', routes);
+app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${__dirname}/bower_components`));
 
 // Listens on port
 app.listen(config.port, () => {
