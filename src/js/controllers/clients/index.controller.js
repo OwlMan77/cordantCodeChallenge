@@ -1,6 +1,6 @@
 angular
   .module('cordant')
-  .controller('clientIndexCtrl', indexCtrl)
+  .controller('clientIndexCtrl', indexCtrl);
 
   indexCtrl.$inject = ['Client'];
   function indexCtrl(Client){

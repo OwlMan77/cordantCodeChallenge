@@ -38,7 +38,7 @@
       "js": "app.js",
       "index": "index.html",
       "scss": "style.scss",
-      "server": "index.js",
+      "server": "server.js",
       "gulpfile": "gulpfile.js",
       "packageJson": "package.json"
     },
