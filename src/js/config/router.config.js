@@ -13,7 +13,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     .state('ClientSelector',
   {
     url: '/clients',
-    templateUrl: '/js/views/clients.html',
+    templateUrl: '/js/views/clients/index.html',
     controller: 'clientIndexCtrl',
     controllerAs: 'clientIndex'
   });
