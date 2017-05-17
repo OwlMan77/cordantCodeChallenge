@@ -12,7 +12,7 @@ mongoose.connect(config.db);
 
 //Models
 const Client      =  require('../models/client.js');
-const Candidates  =  require('../models/candidate.js');
+const Candidate  =  require('../models/candidate.js');
 
 //drop the database before seeding
 Client.collection.drop();
