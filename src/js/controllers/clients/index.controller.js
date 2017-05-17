@@ -4,6 +4,7 @@ angular
 
   indexCtrl.$inject = ['Client'];
   function indexCtrl(Client){
-    const vm = this;
+    const vm   = this;
+    vm.test    = "hello"; 
     vm.clients = Client.query();
   }

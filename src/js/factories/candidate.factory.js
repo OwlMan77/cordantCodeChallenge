@@ -2,7 +2,7 @@ angular
 .module('cordant')
 .factory('Candidate', candidateFactory);
 
-candidateFactory.$inject = ['API', $resource];
+candidateFactory.$inject = ['API', '$resource'];
 
 function candidateFactory(API, $resource){
 
