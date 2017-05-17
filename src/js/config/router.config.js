@@ -10,5 +10,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
       url: '/',
       templateUrl: '/js/views/home.html'
     })
+    .state('ClientSelector',
+  {
+    url: '/clients',
+    templateUrl: '/js/views/clients.html'
+    controller: 'clientIndexCtrl'
+    controllerAs: 'clientIndex'
+  })
   $urlRouterProvider.otherwise('/');
 }
