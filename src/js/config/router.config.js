@@ -10,4 +10,5 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
       url: '/',
       templateUrl: '/js/views/home.html'
     })
+  $urlRouterProvider.otherwise('/');
 }
