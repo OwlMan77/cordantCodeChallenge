@@ -16,7 +16,7 @@ const Candidate  =  require('../models/candidate.js');
 
 //drop the database before seeding
 Client.collection.drop();
-Candidates.collection.drop();
+Candidate.collection.drop();
 
 
 async.waterfall([
