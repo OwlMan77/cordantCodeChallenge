@@ -2,8 +2,8 @@ angular
 .module('cordant')
 .controller('clientShowCtrl', showCtrl);
 
-showCtrl.$inject = ['Client', '$stateParams', 'NgMap', 'GmapAPIKey'];
-function showCtrl(Client, $stateParams, NgMap, GmapAPIKey){
+showCtrl.$inject = ['Client', '$stateParams', 'NgMap', 'GmapAPIKey', 'Postcode'];
+function showCtrl(Client, $stateParams, NgMap, GmapAPIKey, Postcode){
  const vm = this;
 
  //setting up map
@@ -19,5 +19,16 @@ function showCtrl(Client, $stateParams, NgMap, GmapAPIKey){
   .get($stateParams)
   .$promise.then(response => {
     vm.client = response;
+
+    Postcode
+    .get({id:vm.client.postcode})
+    .$promise.then(response =>
+      {
+        vm.clientLat = response.result.latitude,
+        vm.clientLong = response.result.longitude
+      }
+    )
   });
+
+
 }
