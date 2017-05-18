@@ -5,6 +5,8 @@ angular
 showCtrl.$inject = ['Client', '$stateParams', 'NgMap', 'GmapAPIKey'];
 function showCtrl(Client, $stateParams, NgMap, GmapAPIKey){
  const vm = this;
+
+ //setting up map
   NgMap.getMap().then(function(map) {
    console.log(map.getCenter());
     console.log('markers', map.markers);
@@ -12,6 +14,7 @@ function showCtrl(Client, $stateParams, NgMap, GmapAPIKey){
   });
 
   vm.googleMapsUrl= `https://maps.googleapis.com/maps/api/js?key=${GmapAPIKey}`
+
   Client
   .get($stateParams)
   .$promise.then(response => {
