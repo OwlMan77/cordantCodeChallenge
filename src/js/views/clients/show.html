@@ -1,14 +1,15 @@
 <section>
-  <div ngModel="clientShow">
+
+  <div class="rightside" ngModel="clientShow">
+    <button ui-sref="ClientSelector"></button>
     <img class="clientProfile" ng-src="{{clientShow.client.image}}"/>
     <h1>{{ clientShow.client.name}}</h1>
     <h2></h2>
   </div>
-  <div map-lazy-load="https://maps.google.com/maps/api/js"
-    map-lazy-load-params="{{clientShow.googleMapsUrl}}">
-    <ng-map styles = "{{clientShow.gMapStyles}}" center="{{clientShow.clientLat}}, {{clientShow.clientLong}}" zoom="11">
-      <marker position="{{clientShow.clientLat}}, {{clientShow.clientLong}}"></marker>
-    </ng-map>
-      </div>
-  </div>
+    <div map-lazy-load="https://maps.google.com/maps/api/js"
+      map-lazy-load-params="{{clientShow.googleMapsUrl}}">
+      <ng-map class="clientMap" styles = "{{clientShow.gMapStyles}}" center="{{clientShow.clientLat}}, {{clientShow.clientLong}}" zoom="11">
+        <marker position="{{clientShow.clientLat}}, {{clientShow.clientLong}}"></marker>
+      </ng-map>
+        </div>
 </section>

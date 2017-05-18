@@ -1,3 +1,23 @@
 .clientProfile{
   width: 200px;
 }
+
+.clientMap{
+  width: 70%;
+  height: 100%;
+  position: absolute;
+}
+
+.clientInfo{
+  display: inline;
+}
+
+.clientInfo:hover{
+  text-decoration: underline;
+}
+
+.rightside{
+  float: left;
+  height: 100%;
+  width: 25%;
+}

@@ -1,5 +1,8 @@
 <section>
-  <div ui-sref="ClientPage({id: client._id})" ng-repeat="client in clientIndex.clients">
-    {{client.name}}
+  <div class ="row" ui-sref="ClientPage({id: client._id})" ng-repeat="client in clientIndex.clients">
+    <div class="clientInfo col s1">
+      <img class= "clientProfile" src="{{client.image}}" alt="">
+      <h5>{{client.name}}</h5>
+    </div>
   </div>
 </section>
