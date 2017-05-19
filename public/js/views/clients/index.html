@@ -2,16 +2,31 @@
 
   <!-- Modal Trigger -->
   <div class="col">
-      <a class='btn' data-target='demoModal' modal>Show Modal</a>
+      <a class='btn-floating btn-large waves-effect waves-light red' data-target='addClient' modal>+</a>
   </div>
   <!-- Modal Structure -->
-  <div id="demoModal" class="modal">
+  <div id="addClient" class="modal">
       <div class="modal-content">
-          <h4>Modal header</h4>
-          <p>A bunch of text</p>
+          <h4>Add a Client</h4>
+          <form class="" ng-submit="clientIndex.create()">
+            <div class="input-field inline">
+              <input type="text" name="Name" ng-model= "clientIndex.client.name">
+              <label for="Name">Name</label>
+            </div>
+            <div class="input-field inline">
+            <input type="text" name=" Postcode" ng-model= "clientIndex.client.postcode">
+            <label for="Postcode">Postcode</label>
+          </div>
+          <div class="input-field inline">
+            <input type="text" name="Picture" ng-model= "clientIndex.client.image">
+            <label for="Picture">Picture Url</label>
+          </div>
+            <input type="submit" id="submit" value="Add Client" />
+          </form>
       </div>
     </div>
 
+<!-- index of clients -->
   <div class ="row" ui-sref="ClientPage({id: client._id})" ng-repeat="client in clientIndex.clients">
     <div class="clientInfo col s1">
       <img class= "clientProfile" src="{{client.image}}" alt="">
