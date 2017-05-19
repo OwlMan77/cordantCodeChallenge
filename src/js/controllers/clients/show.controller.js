@@ -2,11 +2,11 @@ angular
 .module('cordant')
 .controller('clientShowCtrl', showCtrl);
 
-showCtrl.$inject = ['Client', '$stateParams', 'NgMap', 'GmapAPIKey', 'Postcode'];
-function showCtrl(Client, $stateParams, NgMap, GmapAPIKey, Postcode){
+showCtrl.$inject = ['Client', 'Candidate', '$stateParams', 'NgMap', 'GmapAPIKey', 'Postcode'];
+function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode){
  const vm = this;
 
- //setting up map
+//setting up map
   NgMap.getMap().then(function(map) {
    console.log(map.getCenter());
     console.log('markers', map.markers);
@@ -20,7 +20,7 @@ function showCtrl(Client, $stateParams, NgMap, GmapAPIKey, Postcode){
   .get($stateParams)
   .$promise.then(response => {
     vm.client = response;
-    //gets the geolocation of the client by making an API call to postcode.io
+//gets the geolocation of the client by making an API call to postcode.io
     Postcode
     .get({id:vm.client.postcode})
     .$promise.then(response =>
@@ -30,7 +30,11 @@ function showCtrl(Client, $stateParams, NgMap, GmapAPIKey, Postcode){
       }
     )
   });
-  //custom style for our Gmap
+
+// Candidate index function
+  vm.candidates = Candidate.query();
+
+//custom style for our Gmap
   vm.gMapStyles     = [
     {
         "featureType": "all",

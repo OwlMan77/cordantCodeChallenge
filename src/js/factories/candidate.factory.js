@@ -5,7 +5,7 @@ angular
 candidateFactory.$inject = ['API', '$resource'];
 
 function candidateFactory(API, $resource){
-
+//sets up the type of API requests we can make for candidates
   return $resource(`${API}/candidates/:id`, {id: '@_id'},     {
       'get': { method: 'GET', isArray: false },
       'save': { method: 'POST' },
