@@ -15,11 +15,12 @@ function showCtrl(Client, $stateParams, NgMap, GmapAPIKey, Postcode){
 
   vm.googleMapsUrl  = `https://maps.googleapis.com/maps/api/js?key=${GmapAPIKey}`
 
+//show API call
   Client
   .get($stateParams)
   .$promise.then(response => {
     vm.client = response;
-
+    //gets the geolocation of the client by making an API call to postcode.io
     Postcode
     .get({id:vm.client.postcode})
     .$promise.then(response =>
@@ -29,6 +30,7 @@ function showCtrl(Client, $stateParams, NgMap, GmapAPIKey, Postcode){
       }
     )
   });
+  //custom style for our Gmap
   vm.gMapStyles     = [
     {
         "featureType": "all",
