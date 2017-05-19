@@ -61,17 +61,23 @@ function createCandidates(done){
       name: 'Nick',
       image: 'http://www.placecage.com/200/300',
       postcode: 'NW9 4BQ',
+      latitude: 51.5907607184934,
+      longitude: -0.240021783009471,
       modeOfTransport: { name: 'Car', speed: 38}
     },
     {
       name: 'Patrick',
       image: 'http://www.placecage.com/200/300',
       postcode: 'NW3 6UT',
+      latitude: 51.5556379489108,
+      longitude:-0.179983706447622,
       modeOfTransport: { name: 'Car', speed: 38}
     },
     {
       name: 'Oscar',
       image: 'http://www.placecage.com/200/300',
+      latitude: 51.5854188839318,
+      longitude: -0.232216943791419,
       postcode: 'NW4 4NH',
       modeOfTransport: { name: 'Car', speed: 38}
     },
