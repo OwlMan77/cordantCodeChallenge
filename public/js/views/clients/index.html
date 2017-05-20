@@ -2,7 +2,7 @@
 
   <!-- Modal Trigger -->
   <div class="col">
-      <a class='btn-floating btn-large waves-effect waves-light red' data-target='addClient' modal>+</a>
+      <a class="btn-floating btn-large waves-effect waves-light red" data-target="addClient" modal>+</a>
   </div>
   <!-- Modal Structure -->
   <div id="addClient" class="modal">
@@ -27,7 +27,7 @@
     </div>
 
 <!-- index of clients -->
-  <div class ="carousel-item" ui-sref="ClientPage({id: client._id})" ng-repeat="client in clientIndex.clients">
+  <div class ="row" ui-sref="ClientPage({id: client._id})" ng-repeat="client in clientIndex.clients">
     <div class="clientInfo col s1">
       <img class= "clientProfile" src="{{client.image}}" alt="">
       <h5>{{client.name}}</h5>

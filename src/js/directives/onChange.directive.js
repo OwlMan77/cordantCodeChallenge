@@ -3,7 +3,7 @@
 
 //custom directive as I want to make an api call to obtain geolocation when making a new candidate
 
-app.directive('onChange', function() {
+angular.module('cordant').directive('onChange', function() {
     return {
         restrict: 'A',
         scope:{'onChange':'=' },
