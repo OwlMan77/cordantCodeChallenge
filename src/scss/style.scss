@@ -2,6 +2,9 @@
   width: 200px;
 }
 
+
+// UserShow
+
 .clientMap{
   width: 80%;
   height: 100%;
@@ -26,4 +29,24 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+
+// Navbar
+
+.nav-wrapper{
+  background-color: rgba(1, 0, 128,0.7);
+  z-index: 200;
+}
+
+.brand-logo{
+  img{
+    width: 30px;
+  }
+}
+
+#burgerIcon{
+  position: relative;
+  top: 5px;
+  width: 40px;
 }
