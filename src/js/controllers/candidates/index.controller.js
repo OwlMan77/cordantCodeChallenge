@@ -1,24 +1,21 @@
 angular
-  .module('cordant')
-  .controller('candidateIndexCtrl', indexCtrl);
-  indexCtrl.$inject = ['Candidate', 'Postcode'];
-  function indexCtrl(Candidate, Postcode){
-    const vm      = this;
-    vm.candidates = Candidate.query();
-    vm.test       = 'test';
-    // vm.getLatLng = () => {
-    //   Postcode
-    //   .get({id: vm.candidate.postcode})
-    //   .$promise
-    //   .then(
-    //     response => {
-    //       vm.candidate.latitude = response.result.latitude,
-    //       vm.candidate.longitude = response.result.longitude
-    //   }
-    // );
-  // }
+.module('cordant')
+.controller('candidateIndexCtrl', indexCtrl);
 
+  showCtrl.$inject = ['Candidate','Postcode'];
+  function indexCtrl(Candidate){
+    const vm   = this;
+
+    //index api call
+    vm.candidates = Candidate.query();
+
+    //post request to create a new client
     vm.create = () => {
-      Candidate.save(vm.candidate).then( console.log(`${vm.candidate.latitude}`));
-    }
+      Client
+      .save(vm.candidate)
+      .$promise
+      .then(() => {
+        location.reload();
+      });
+    };
   }

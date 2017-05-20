@@ -1,10 +1,8 @@
 <section>
-  {{candidateIndex.test}}
-  <div class ="row" ng-repeat="candidate in candidateIndex.candidates">
-    <div class="clientInfo col s1">
+  <div class ="row" >
+    <div class="clientInfo col s3" ng-repeat="candidate in clientIndex.candidates">
       <img class= "clientProfile" src="{{candidate.image}}" alt="">
       <h5>{{candidate.name}}</h5>
-      <h5>test</h5>
     </div>
   </div>
 </section>

@@ -25,8 +25,8 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     .state('candidateList', {
       url: '/candidates',
       templateUrl: '/js/views/candidates/index.html',
-      controller: 'candidateIndexCtrl',
-      controllerAs: 'candidateIndex'
+      controller: 'clientIndexCtrl',
+      controllerAs: 'clientIndex'
     });
 
   $urlRouterProvider.otherwise('/');
