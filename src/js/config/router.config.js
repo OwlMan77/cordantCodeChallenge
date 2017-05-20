@@ -22,13 +22,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
       controller: 'clientShowCtrl',
       controllerAs: 'clientShow'
     })
-    .state('candidateIndex', {
+    .state('candidateList', {
       url: '/candidates',
       templateUrl: '/js/views/candidates/index.html',
       controller: 'candidateIndexCtrl',
       controllerAs: 'candidateIndex'
     });
-
 
   $urlRouterProvider.otherwise('/');
 }
