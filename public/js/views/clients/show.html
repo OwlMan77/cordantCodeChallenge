@@ -8,6 +8,7 @@
       map-lazy-load-params="{{clientShow.googleMapsUrl}}">
       <ng-map class="clientMap" styles = "{{clientShow.gMapStyles}}" center="{{clientShow.clientLat}}, {{clientShow.clientLong}}" zoom="11">
         <marker position="{{clientShow.clientLat}}, {{clientShow.clientLong}}"></marker>
+        <custom-marker ng-repeat="candidate in clientShow.candidates" position="{{candidate.latitude}}, {{candidate.longitude}}"><div><img class="candidateMapImages" src="{{candidate.image}}" alt="">{{candidate.name}}, {{candidate.postcode}}</div></custom-marker>
       </ng-map>
         </div>
 </section>
