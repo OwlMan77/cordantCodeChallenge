@@ -17,5 +17,5 @@ angular
       .then(() => {
         location.reload();
       });
-    }
+    };
   }

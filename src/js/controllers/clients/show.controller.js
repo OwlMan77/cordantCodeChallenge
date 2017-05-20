@@ -13,7 +13,7 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode){
     console.log('shapes', map.shapes);
   });
 
-  vm.googleMapsUrl  = `https://maps.googleapis.com/maps/api/js?key=${GmapAPIKey}`
+  vm.googleMapsUrl  = `https://maps.googleapis.com/maps/api/js?key=${GmapAPIKey}`;
 
 //show API call
   Client
@@ -26,9 +26,9 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode){
     .$promise.then(response =>
       {
         vm.clientLat = response.result.latitude,
-        vm.clientLong = response.result.longitude
+        vm.clientLong = response.result.longitude;
       }
-    )
+    );
   });
 
 // Candidate index function
@@ -204,5 +204,5 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode){
             }
         ]
     }
-]
+];
 }
