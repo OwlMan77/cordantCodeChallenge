@@ -63,7 +63,7 @@ function createCandidates(done){
       postcode: 'NW9 4BQ',
       latitude: 51.5907607184934,
       longitude: -0.240021783009471,
-      modeOfTransport: { nameOfTransport: 'Car', speed: 38}
+      modeOfTransport: { nameOfTransport: 'DRIVING', speed: 38}
     },
     {
       name: 'Patrick',
@@ -71,7 +71,7 @@ function createCandidates(done){
       postcode: 'NW3 6UT',
       latitude: 51.5556379489108,
       longitude:-0.179983706447622,
-      modeOfTransport: { nameOfTransport: 'Car', speed: 38}
+      modeOfTransport: { nameOfTransport: 'DRIVING', speed: 38}
     },
     {
       name: 'Oscar',
@@ -79,7 +79,7 @@ function createCandidates(done){
       latitude: 51.5854188839318,
       longitude: -0.232216943791419,
       postcode: 'NW4 4NH',
-      modeOfTransport: { nameOfTransport: 'Car', speed: 38}
+      modeOfTransport: { nameOfTransport: 'DRIVING', speed: 38}
     },
   ]
   bluebird.map(candidates, candidate => {
