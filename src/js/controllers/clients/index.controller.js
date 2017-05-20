@@ -15,7 +15,7 @@ angular
       .save(vm.client)
       .$promise
       .then(() => {
-        console.log('Company added');
+        location.reload();
       });
     }
   }
