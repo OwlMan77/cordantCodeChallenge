@@ -8,9 +8,9 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode, 
 
 //setting up map
   NgMap.getMap().then(function(map) {
-   console.log(map.getCenter());
-    console.log('markers', map.markers);
-    console.log('shapes', map.shapes);
+  //  console.log(map.getCenter());
+  //   console.log('markers', map.markers);
+  //   console.log('shapes', map.shapes);
   });
 
   vm.googleMapsUrl  = `https://maps.googleapis.com/maps/api/js?key=${GmapAPIKey}`;
@@ -40,10 +40,9 @@ vm.getDistance = (e, lat, lng, travel) => {
 
   $http({
     method: 'GET',
-    url:`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${lat},${lng}&mode=${travel}&key=${GmapAPIKey}`})
-  .then((response) => {
-    vm.distance     = response.rows[0].elements[0].distance.text;
-    vm.distanceTime = response.rows[0].elements[0].duration.text;
+    url:`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${lat},${lng}&mode=${travel}&key=${GmapAPIKey}`}).then((response) => {
+    vm.distance     = response.data.rows[0].elements[0].distance.text;
+    vm.distanceTime = response.data.rows[0].elements[0].duration.text;
   });
 };
 
