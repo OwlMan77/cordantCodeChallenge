@@ -2,8 +2,8 @@ angular
 .module('cordant')
 .controller('clientShowCtrl', showCtrl);
 
-showCtrl.$inject = ['Client', 'Candidate', '$stateParams', 'NgMap', 'GmapAPIKey', 'Postcode'];
-function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode){
+showCtrl.$inject = ['Client', 'Candidate', '$stateParams', 'NgMap', 'GmapAPIKey', 'Postcode', '$http'];
+function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode, $http){
  const vm = this;
 
 //setting up map
@@ -33,6 +33,21 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode){
 
 // Candidate index function
   vm.candidates = Candidate.query();
+
+//create a function that compares the distance of the marker clicked with clientlat and client lng
+vm.getDistance = (e, lat, lng, travel) => {
+  const origin      = [vm.clientLat, vm.clientLong];
+
+  $http({
+    method: 'GET',
+    url:`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${lat},${lng}&mode=${travel}&key=${GmapAPIKey}`})
+  .then((response) => {
+    vm.distance     = response.rows[0].elements[0].distance.text;
+    vm.distanceTime = response.rows[0].elements[0].duration.text;
+  });
+};
+
+
 
 //custom style for our Gmap
   vm.gMapStyles     = [
