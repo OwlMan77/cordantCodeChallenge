@@ -50,3 +50,23 @@
   top: 5px;
   width: 40px;
 }
+
+//Home Page
+.title{
+  h1{
+    text-align: center;
+  }
+  .bigLogo{
+    position: relative;
+    left: 49%;
+  }
+}
+
+.description{
+  text-align: center;
+}
+.howToUse{
+  text-align: center;
+  background-color: rgba(1, 0, 128, 1);
+  color: rgba(255, 255, 255, 0.9);
+}
