@@ -8,13 +8,16 @@
     <h1>{{ clientShow.client.name}}</h1>
 <!--  Selected candidate info-->
     <div class = "candidateSelectorProfile">
-      <img class="candidateProfile responsive-img" ng-src="{{clientShow.selectedCandidateImage}}">
-      <br>
-      Name: {{clientShow.selectedCandidateName}}
-      <br>
-      Distance From Client: {{clientShow.distance}}
-      <br>
-      Approx. Travel Time: {{clientShow.distanceTime}}
+      <img style="width:150px;height:200px;float:left;" ng-src="{{clientShow.selectedCandidateImage}}">
+      <span>
+        Candidate Info :-
+        <br>
+          Name: {{clientShow.selectedCandidateName}}
+        <br>
+          Distance From Client: {{clientShow.distance}}
+        <br>
+          Approx. Travel Time: {{clientShow.distanceTime}}
+    </span>
     </div>
   </div>
 
