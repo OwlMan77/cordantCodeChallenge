@@ -17,17 +17,16 @@ angular
       .then(response =>
         {
           vm.candidate.latitude = response.result.latitude,
-          vm.candidate.longitude = response.result.longitude
+          vm.candidate.longitude = response.result.longitude;
+          Candidate
+          .save(vm.candidate)
+          .$promise
+          .then(() => {
+            location.reload();
+          });
         }
       );
-      
-      Candidate
-      .save(vm.candidate)
-      .$promise
-      .then(() => {
-        location.reload();
-      });
-    }
+    };
 
     //post request to create a new client
     vm.create = () => {

@@ -36,15 +36,29 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode, 
 
 //create a function that compares the distance of the marker clicked with clientlat and client lng
 vm.getDistance = (e, lat, lng, travel, candidateName, candidatePicture) => {
-  const origin              = [vm.clientLat, vm.clientLong];
+  const origin              = new google.maps.LatLng(vm.clientLat, vm.clientLong);
+  const destination         = new google.maps.LatLng(lat, lng)
   vm.selectedCandidateName  = candidateName;
   vm.selectedCandidateImage = candidatePicture;
-  $http({
-    method: 'GET',
-    url:`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${lat},${lng}&mode=${travel}&key=${GmapAPIKey}`}).then((response) => {
-    vm.distance     = response.data.rows[0].elements[0].distance.text;
-    vm.distanceTime = response.data.rows[0].elements[0].duration.text;
-  });
+
+  const service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+    origins: [origin],
+    destinations: [destination],
+    travelMode: travel
+  }, (response) => {
+    console.log(response);
+    vm.distance     = response.rows[0].elements[0].distance.text;
+    vm.distanceTime = response.rows[0].elements[0].duration.text;
+    }
+  );
+  // $http({
+  //   method: 'GET',
+  //   url:`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${lat},${lng}&mode=${travel}&key=${GmapAPIKey}`}).then((response) => {
+  //   vm.distance     = response.data.rows[0].elements[0].distance.text;
+  //   vm.distanceTime = response.data.rows[0].elements[0].duration.text;
+  // });
 };
 
 
