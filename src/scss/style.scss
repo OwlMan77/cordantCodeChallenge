@@ -3,7 +3,7 @@
 }
 
 
-// UserShow
+// ClientShow
 
 .clientMap{
   width: 80%;
@@ -29,6 +29,12 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+candidateProfile{
+  .responsive-img{
+    max-width: 75%;
+  }
 }
 
 
@@ -65,6 +71,7 @@
 .description{
   text-align: center;
 }
+
 .howToUse{
   text-align: center;
   background-color: rgba(1, 0, 128, 1);

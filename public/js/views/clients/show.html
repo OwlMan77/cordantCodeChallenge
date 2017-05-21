@@ -2,15 +2,19 @@
 
 <!--client info  -->
   <div class="rightside" ngModel="clientShow">
-    <button ui-sref="ClientSelector"></button>
-    <img class="clientProfile" ng-src="{{clientShow.client.image}}"/>
+
+    <a class="btn" ui-sref="ClientSelector"> ← Back to Clients</a>
+    <img class="clientProfile responsive-img" ng-src="{{clientShow.client.image}}"/>
     <h1>{{ clientShow.client.name}}</h1>
-    <img class="candidateProfile" src="{{clientShow.selectedCandidateImage}}" alt="">
-    <h2>{{clientShow.selectedCandidateName}}</h2>
-    <br>
-    Distance From Client: {{clientShow.distance}}
-    <br>
-    Approx. Travel Time: {{clientShow.distanceTime}}
+
+    <div class = "candidateSelectorProfile">
+      <img class="candidateProfile responsive-img" src="{{clientShow.selectedCandidateImage}}">
+      <h3>{{clientShow.selectedCandidateName}}</h3>
+      <br>
+      Distance From Client: {{clientShow.distance}}
+      <br>
+      Approx. Travel Time: {{clientShow.distanceTime}}
+    </div>
   </div>
 
 
