@@ -1,6 +1,8 @@
 <section>
+
   <div class ="row" >
-    <div class="clientInfo col s3" ng-repeat="candidate in clientIndex.candidates">
+    <h1 class="col s12 offset-s4">Candidates</h1>
+    <div class="candidateInfo col s2" ng-repeat="candidate in clientIndex.candidates">
       <img class= "clientProfile" src="{{candidate.image}}" alt="">
       <h5>{{candidate.name}}</h5>
       {{candidate.modeOfTransport.nameOfTransport}}
