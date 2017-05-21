@@ -5,7 +5,8 @@
     <div class="candidateInfo col s2" ng-repeat="candidate in clientIndex.candidates">
       <img class= "clientProfile" src="{{candidate.image}}" alt="">
       <h5>{{candidate.name}}</h5>
-      {{candidate.modeOfTransport.nameOfTransport}}
+      <p>  Transport:<span id="lowercase"> {{candidate.modeOfTransport.nameOfTransport}}</span></p>
+      {{candidate.postcode}}
     </div>
   </div>
 </section>
