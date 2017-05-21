@@ -2,8 +2,8 @@ angular
 .module('cordant')
 .controller('clientShowCtrl', showCtrl);
 
-showCtrl.$inject = ['Client', 'Candidate', '$stateParams', 'NgMap', 'GmapAPIKey', 'Postcode', '$http'];
-function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode, $http){
+showCtrl.$inject = ['Client', 'Candidate', '$stateParams', 'NgMap', 'GmapAPIKey', 'Postcode', '$http', '$scope'];
+function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode, $http, $scope){
  const vm = this;
 
 //setting up map
@@ -38,8 +38,6 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode, 
 vm.getDistance = (e, lat, lng, travel, candidateName, candidatePicture) => {
   const origin              = new google.maps.LatLng(vm.clientLat, vm.clientLong);
   const destination         = new google.maps.LatLng(lat, lng)
-  vm.selectedCandidateName  = candidateName;
-  vm.selectedCandidateImage = candidatePicture;
 
   const service = new google.maps.DistanceMatrixService();
   service.getDistanceMatrix(
@@ -48,9 +46,12 @@ vm.getDistance = (e, lat, lng, travel, candidateName, candidatePicture) => {
     destinations: [destination],
     travelMode: travel
   }, (response) => {
-    console.log(response);
     vm.distance     = response.rows[0].elements[0].distance.text;
     vm.distanceTime = response.rows[0].elements[0].duration.text;
+    vm.selectedCandidateName  = candidateName;
+    vm.selectedCandidateImage = candidatePicture;
+    //angular does not know to update the the view so I used scope digest to add the new info
+    $scope.$digest();
     }
   );
   // $http({

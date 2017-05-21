@@ -27,10 +27,6 @@ body{
   height: 100%;
   position: absolute;
 }
-.clientShowInfo{
-  position: relative;
-  top: 20px;
-}
 
 .clientInfo{
   display: inline;
@@ -67,7 +63,7 @@ candidateProfile{
 }
 
 //candidate index
-span{
+#lowercase{
   text-transform: lowercase;
 }
 

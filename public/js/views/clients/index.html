@@ -33,7 +33,7 @@
 <!-- index of clients -->
   <div class ="row">
     <div class="clientInfo col s2" ui-sref="ClientPage({id: client._id})" ng-repeat="client in clientIndex.clients">
-      <img class= "clientProfile" src="{{client.image}}" alt="">
+      <img class= "clientProfile" style="width:200px;height:200px;" src="{{client.image}}" alt="">
       <h5>{{client.name}}</h5>
     </div>
   </div>
