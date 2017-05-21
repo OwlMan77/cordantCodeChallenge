@@ -67,7 +67,7 @@ function createCandidates(done){
     },
     {
       name: 'Patrick',
-      image: 'http://www.placecage.com/200/300',
+      image: 'http://fillmurray.com/200/300',
       postcode: 'NW3 6UT',
       latitude: 51.5556379489108,
       longitude:-0.179983706447622,
@@ -75,7 +75,7 @@ function createCandidates(done){
     },
     {
       name: 'Oscar',
-      image: 'http://www.placecage.com/200/300',
+      image: 'http://stevensegallery.com/200/300',
       latitude: 51.5854188839318,
       longitude: -0.232216943791419,
       postcode: 'NW4 4NH',
