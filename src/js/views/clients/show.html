@@ -6,10 +6,11 @@
     <a class="btn" ui-sref="ClientSelector"> ← Back to Clients</a>
     <img class="clientProfile responsive-img" ng-src="{{clientShow.client.image}}"/>
     <h1>{{ clientShow.client.name}}</h1>
-
+<!--  Selected candidate info-->
     <div class = "candidateSelectorProfile">
-      <img class="candidateProfile responsive-img" src="{{clientShow.selectedCandidateImage}}">
-      <h3>{{clientShow.selectedCandidateName}}</h3>
+      <img class="candidateProfile responsive-img" ng-src="{{clientShow.selectedCandidateImage}}">
+      <br>
+      Name: {{clientShow.selectedCandidateName}}
       <br>
       Distance From Client: {{clientShow.distance}}
       <br>
@@ -19,11 +20,15 @@
 
 
     <!-- Map -->
+    <!-- Directive wrapper to lazy load the map -->
     <div map-lazy-load="https://maps.google.com/maps/api/js"
       map-lazy-load-params="{{clientShow.googleMapsUrl}}">
+    <!-- Sets the center zoom and style of the map -->
       <ng-map class="clientMap" styles = "{{clientShow.gMapStyles}}" center="{{clientShow.clientLat}}, {{clientShow.clientLong}}" zoom="11">
+        <!-- adds a marker for the client -->
         <marker position="{{clientShow.clientLat}}, {{clientShow.clientLong}}"></marker>
-        <custom-marker ng-repeat="candidate in clientShow.candidates" position="{{candidate.latitude}}, {{candidate.longitude}}"  on-click="clientShow.getDistance(candidate.latitude, candidate.longitude, candidate.modeOfTransport.nameOfTransport, candidate.name, candidate.image)"><div><img class="candidateMapImages" src="{{candidate.image}}" alt="">{{candidate.name}}, {{candidate.postcode}}, {{candidate.modeOfTransport.nameOfTransport}}</div></custom-marker>
+        <!-- adds markers for candidates going to add filter:{{clientName}} to limit results once intial styling is done -->
+        <custom-marker ng-repeat="candidate in clientShow.candidates" position="{{candidate.latitude}}, {{candidate.longitude}}"  on-click="clientShow.getDistance(candidate.latitude, candidate.longitude, candidate.modeOfTransport.nameOfTransport, candidate.name, candidate.image)"><div><img class="candidateMapImages" src="{{candidate.image}}" alt=""> {{candidate.modeOfTransport.nameOfTransport}}</div></custom-marker>
       </ng-map>
         </div>
 </section>
