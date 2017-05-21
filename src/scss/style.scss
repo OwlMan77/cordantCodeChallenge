@@ -1,7 +1,22 @@
+$primary-colour: rgba(1, 0, 128, 1);
+$secondary-colour: #f2f2f2;
+$primary-font: 'Roboto';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+  background-color: $secondary-colour;
+  font-family: $primary-font;
+}
+
+//ClientIndex
+
 .clientProfile{
   width: 200px;
 }
 
+.clientTitle{
+  text-align: center;
+}
 
 // ClientShow
 
@@ -13,6 +28,14 @@
 
 .clientInfo{
   display: inline;
+  margin-right: 5px;
+  border-radius: 10%;
+  img{
+    border-radius: 17%;
+  }
+  h5{
+    text-align: center;
+  }
 }
 
 .clientInfo:hover{
@@ -41,7 +64,7 @@ candidateProfile{
 // Navbar
 
 .nav-wrapper{
-  background-color: rgba(1, 0, 128,0.7);
+  background-color: $primary-colour;
   z-index: 200;
 }
 
@@ -74,6 +97,6 @@ candidateProfile{
 
 .howToUse{
   text-align: center;
-  background-color: rgba(1, 0, 128, 1);
-  color: rgba(255, 255, 255, 0.9);
+  background-color: $primary-colour;
+  color: $secondary-colour;
 }
