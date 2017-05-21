@@ -1,4 +1,37 @@
 <section>
+  <!-- Modal Trigger -->
+  <div class="col">
+      <a class="btn-large waves-effect waves-light red" data-target="addCandidate" modal>Add A Candidate</a>
+  </div>
+  <!-- Modal Structure -->
+  <div id="addCandidate" class="modal">
+      <div class="modal-content">
+          <h4>Add a Candidate</h4>
+          <form class="" ng-submit="clientIndex.createCandidate()">
+            <div class="input-field inline">
+              <input type="text" name="Name" ng-model= "clientIndex.candidate.name">
+              <label for="Name">Name</label>
+            </div>
+            <div class="input-field inline">
+            <input onChange="clientIndex.candidateLatLng()" type="text" name=" Postcode" ng-model= "clientIndex.candidate.postcode">
+            <label for="Postcode">Postcode</label>
+          </div>
+          <div class="input-field inline">
+            <input type="text" name="Picture" ng-model= "clientIndex.candidate.image">
+            <label for="Picture">Picture Url</label>
+          </div>
+          <!-- <div class="input-field">
+            <select ng-model= "clientIndex.candidate.modeOfTransport.nameOfTransport"  material-select watch>
+              <option value="DRIVING">Car</option>
+              <option value="TRANSIT">Public Transport</option>
+              <option value="WALKING">Walking</option>
+            </select>
+            <label>Transport</label>
+          </div> -->
+            <input type="submit" id="submit" value="Add Candidate" />
+          </form>
+      </div>
+    </div>
 
   <div class ="row" >
     <h1 class="col s12 offset-s4">Candidates</h1>
@@ -6,7 +39,7 @@
       <img class= "clientProfile" src="{{candidate.image}}" alt="">
       <h5>{{candidate.name}}</h5>
       <p>  Transport:<span id="lowercase"> {{candidate.modeOfTransport.nameOfTransport}}</span></p>
-      {{candidate.postcode}}
+      {{candidate.postcode}}, {{candidate.latitude}}
     </div>
   </div>
 </section>

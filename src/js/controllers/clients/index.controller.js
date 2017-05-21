@@ -10,7 +10,7 @@ angular
     vm.clients = Client.query();
     vm.candidates = Candidate.query();
 
-    vm.candidateLatLng = () => {
+    vm.createCandidate = () =>{
       Postcode
       .get({id:vm.candidate.postcode})
       .$promise
@@ -20,9 +20,7 @@ angular
           vm.candidate.longitude = response.result.longitude
         }
       );
-    }
-
-    vm.createCandidate = () =>{
+      
       Candidate
       .save(vm.candidate)
       .$promise
