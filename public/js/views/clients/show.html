@@ -1,10 +1,15 @@
 <section>
+
 <!--client info  -->
   <div class="rightside" ngModel="clientShow">
     <button ui-sref="ClientSelector"></button>
     <img class="clientProfile" ng-src="{{clientShow.client.image}}"/>
     <h1>{{ clientShow.client.name}}</h1>
-    Distance From Client: {{clientShow.distance}}<br>
+    <img src="{{clientShow.selectedCandidateImage}}" alt="">
+    <h2>{{clientShow.selectedCandidateName}}</h2>
+    <br>
+    Distance From Client: {{clientShow.distance}}
+    <br>
     Approx. Travel Time: {{clientShow.distanceTime}}
   </div>
 
@@ -14,7 +19,7 @@
       map-lazy-load-params="{{clientShow.googleMapsUrl}}">
       <ng-map class="clientMap" styles = "{{clientShow.gMapStyles}}" center="{{clientShow.clientLat}}, {{clientShow.clientLong}}" zoom="11">
         <marker position="{{clientShow.clientLat}}, {{clientShow.clientLong}}"></marker>
-        <custom-marker ng-repeat="candidate in clientShow.candidates" position="{{candidate.latitude}}, {{candidate.longitude}}"  on-click="clientShow.getDistance(candidate.latitude, candidate.longitude, candidate.modeOfTransport.nameOfTransport)"><div><img class="candidateMapImages" src="{{candidate.image}}" alt="">{{candidate.name}}, {{candidate.postcode}}, {{candidate.modeOfTransport.nameOfTransport}}</div></custom-marker>
+        <custom-marker ng-repeat="candidate in clientShow.candidates" position="{{candidate.latitude}}, {{candidate.longitude}}"  on-click="clientShow.getDistance(candidate.latitude, candidate.longitude, candidate.modeOfTransport.nameOfTransport, candidate.name, candidate.image)"><div><img class="candidateMapImages" src="{{candidate.image}}" alt="">{{candidate.name}}, {{candidate.postcode}}, {{candidate.modeOfTransport.nameOfTransport}}</div></custom-marker>
       </ng-map>
         </div>
 </section>

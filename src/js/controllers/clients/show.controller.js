@@ -35,9 +35,10 @@ function showCtrl(Client, Candidate, $stateParams, NgMap, GmapAPIKey, Postcode, 
   vm.candidates = Candidate.query();
 
 //create a function that compares the distance of the marker clicked with clientlat and client lng
-vm.getDistance = (e, lat, lng, travel) => {
-  const origin      = [vm.clientLat, vm.clientLong];
-
+vm.getDistance = (e, lat, lng, travel, candidateName, candidatePicture) => {
+  const origin              = [vm.clientLat, vm.clientLong];
+  vm.selectedCandidateName  = candidateName;
+  vm.selectedCandidateImage = candidatePicture;
   $http({
     method: 'GET',
     url:`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${lat},${lng}&mode=${travel}&key=${GmapAPIKey}`}).then((response) => {
