@@ -17,6 +17,18 @@ body{
   margin-left: 5px;
 }
 
+//Home
+
+#homeTryButton{
+ font-size: 30px;
+}
+
+.description, .tryItNow, howToUse{
+  font-size: 25px;
+    p{
+      font-size: 25px;
+    }
+}
 
 //ClientIndex
 
@@ -62,11 +74,6 @@ body{
   border-radius: 50%;
 }
 
-candidateProfile{
-  img{
-    border-radius: 50%;
-  }
-}
 
 //candidate index
 #lowercase{
@@ -79,11 +86,20 @@ candidateProfile{
 .nav-wrapper{
   background-color: $primary-colour;
   z-index: 200;
+  a{
+    text-shadow: 5px black;
+    font-size: 20px;
+  }
+  a:hover{
+    color: $secondary-colour;
+  }
 }
 
 .brand-logo{
   img{
     width: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
   }
 }
 

@@ -4,22 +4,25 @@
   <div class="rightside" ngModel="clientShow">
     <a class="btn backbutton" ui-sref="ClientSelector"> ← Back to Clients</a>
     <div class="clientShowInfo row">
-      <h1 class="col 3 offset-s3">{{ clientShow.client.name}}</h1>
+      <h1 class="center-align">{{ clientShow.client.name}}</h1>
       <img class="clientProfile responsive-img col 3 offset-s3" ng-src="{{clientShow.client.image}}"/>
   </div>
 <!--  Selected candidate info-->
-    <div class = "candidateSelectorProfile">
-      <img style="width:150px;height:200px;float:left;border-radius:10%;margin:5px;" ng-src="{{clientShow.selectedCandidateImage}}">
-      <span>
-        Candidate Info :-
-        <br>
-          Name: {{clientShow.selectedCandidateName}}
-        <br>
-          Distance From Client: {{clientShow.distance}}
-        <br>
-          Approx. Travel Time: {{clientShow.distanceTime}}
-    </span>
+    <div class="card">
+      <div class = "candidateSelectorProfile">
+        <img class="card-image" style="width:150px;height:200px;float:left;border-radius:10%;margin:5px;" ng-src="{{clientShow.selectedCandidateImage}}">
+        <span class="card-content">
+          <b>Candidate Info</b> :-
+          <br>
+            Name: {{clientShow.selectedCandidateName}}
+          <br>
+            Distance From Client: {{clientShow.distance}}
+          <br>
+            Approx. Travel Time: {{clientShow.distanceTime}}
+      </span>
+      </div>
     </div>
+
   </div>
 
 
