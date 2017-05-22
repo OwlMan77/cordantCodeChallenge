@@ -20,9 +20,13 @@
             <input type="text" name="Picture" ng-model= "clientIndex.candidate.image">
             <label for="Picture">Picture Url</label>
           </div>
-          <div class="input-field inline">
-            <input type="text"  ng-model= "clientIndex.candidate.modeOfTransport.nameOfTransport">
-            <label >Transport</label>
+          <div class="input-field">
+            <select class="browser-default input-field" ng-model= "clientIndex.candidate.modeOfTransport.nameOfTransport">
+              <option value="" disabled selected>Select A Mode Of Transport</option>
+              <option value="DRIVING">Car</option>
+              <option value="TRANSIT">Public Transport</option>
+              <option value="WALKING">Walking</option>
+            </select>
           </div>
           <!-- <div class="input-field">
             <select ng-model= "clientIndex.candidate.modeOfTransport.nameOfTransport"  material-select watch>
@@ -30,7 +34,7 @@
               <option value="TRANSIT">Public Transport</option>
               <option value="WALKING">Walking</option>
             </select>
-            <label>Transport</label>
+
           </div> -->
             <input type="submit" id="submit" value="Add Candidate" />
           </form>
