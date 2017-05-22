@@ -23,17 +23,11 @@ body{
  font-size: 30px;
 }
 
-.description, .tryItNow, howToUse{
-  font-size: 25px;
-    p{
-      font-size: 25px;
-    }
-}
 
 //ClientIndex
 
 .clientProfile{
-  width: 200px;
+  height: 200px;
 }
 
 .clientTitle{
@@ -111,6 +105,7 @@ body{
 
 //Home Page
 .title{
+  padding-bottom: 2%;
   h1{
     text-align: center;
   }
@@ -118,13 +113,18 @@ body{
     position: relative;
     left: 49%;
   }
+
 }
 
 .description{
+  padding-top: 1px;
+  padding-bottom: 1%;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .howToUse{
+  padding-top: 1px;
   text-align: center;
   background-color: $primary-colour;
   color: $secondary-colour;

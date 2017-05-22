@@ -38,11 +38,12 @@
     <div class="candidateInfo col s2" ng-repeat="candidate in clientIndex.candidates">
       <div class="card">
         <div class="card-image">
-          <img class= "clientProfile" src="{{candidate.image}}" alt="">
-          <h5 class="card-title center-align">{{candidate.name}}</h5>
+          <img class= "clientProfile responsive-img center-align" src="{{candidate.image}}" alt="">
+
         </div>
         <div class="card-content">
-            <p>  Transport:<span id="lowercase"> {{candidate.modeOfTransport.nameOfTransport}}</span></p>
+            <h5 class="card-title center-align">{{candidate.name}}</h5>
+            <p class="center-align">  Transport:<span id="lowercase"> {{candidate.modeOfTransport.nameOfTransport}}</span></p>
         </div>
 
 
