@@ -1,7 +1,7 @@
 <section>
   <!-- Modal Trigger -->
   <div class="col">
-      <a class="btn-large waves-effect waves-light red" data-target="addCandidate" modal>Add A Candidate</a>
+      <a class="btn-large waves-effect waves-light blue darken-4" data-target="addCandidate" modal>Add A Candidate</a>
   </div>
   <!-- Modal Structure -->
   <div id="addCandidate" class="modal">
@@ -13,7 +13,7 @@
               <label for="Name">Name</label>
             </div>
             <div class="input-field inline">
-            <input onChange="clientIndex.candidateLatLng()" type="text" name=" Postcode" ng-model= "clientIndex.candidate.postcode">
+            <input type="text" name=" Postcode" ng-model= "clientIndex.candidate.postcode">
             <label for="Postcode">Postcode</label>
           </div>
           <div class="input-field inline">
@@ -40,10 +40,18 @@
   <div class ="row" >
     <h1 class="col s12 offset-s4">Candidates</h1>
     <div class="candidateInfo col s2" ng-repeat="candidate in clientIndex.candidates">
-      <img class= "clientProfile" src="{{candidate.image}}" alt="">
-      <h5>{{candidate.name}}</h5>
-      <p>  Transport:<span id="lowercase"> {{candidate.modeOfTransport.nameOfTransport}}</span></p>
-      {{candidate.postcode}}, {{candidate.latitude}}
+      <div class="card">
+        <div class="card-image">
+          <img class= "clientProfile" src="{{candidate.image}}" alt="">
+          <h5 class="card-title center-align">{{candidate.name}}</h5>
+        </div>
+        <div class="card-content">
+            <p>  Transport:<span id="lowercase"> {{candidate.modeOfTransport.nameOfTransport}}</span></p>
+        </div>
+
+
+        </div>
     </div>
+  </div>
   </div>
 </section>

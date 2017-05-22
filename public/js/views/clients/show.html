@@ -2,14 +2,14 @@
 
 <!--client info  -->
   <div class="rightside" ngModel="clientShow">
-    <a class="btn" ui-sref="ClientSelector"> ← Back to Clients</a>
-    <div class="clientShowInfo">
-      <h1>{{ clientShow.client.name}}</h1>
-      <img class="clientProfile responsive-img" ng-src="{{clientShow.client.image}}"/>
+    <a class="btn backbutton" ui-sref="ClientSelector"> ← Back to Clients</a>
+    <div class="clientShowInfo row">
+      <h1 class="col 3 offset-s3">{{ clientShow.client.name}}</h1>
+      <img class="clientProfile responsive-img col 3 offset-s3" ng-src="{{clientShow.client.image}}"/>
   </div>
 <!--  Selected candidate info-->
     <div class = "candidateSelectorProfile">
-      <img style="width:150px;height:200px;float:left;" ng-src="{{clientShow.selectedCandidateImage}}">
+      <img style="width:150px;height:200px;float:left;border-radius:10%;margin:5px;" ng-src="{{clientShow.selectedCandidateImage}}">
       <span>
         Candidate Info :-
         <br>
