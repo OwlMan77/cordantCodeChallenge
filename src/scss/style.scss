@@ -28,6 +28,8 @@ body{
 
 .clientProfile{
   height: 200px;
+  position: relative;
+  left: 15%;
 }
 
 .clientTitle{
@@ -37,6 +39,15 @@ body{
 }
 
 // ClientShow
+#candidateSelector{
+  display: none;
+  img{
+    width: 150px;
+    height: 100%;
+    position: relative;
+    left: 20%;
+  }
+}
 .btn{
   margin-top: 5px;
 }
@@ -61,7 +72,7 @@ body{
 .rightside{
   float: left;
   height: 100%;
-  width: 25%;
+  width: 20%;
 }
 
 .candidateMapImages{

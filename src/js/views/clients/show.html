@@ -4,21 +4,22 @@
   <div class="rightside" ngModel="clientShow">
     <a class="btn backbutton" ui-sref="ClientSelector"> ← Back to Clients</a>
     <div class="clientShowInfo row">
-      <h1 class="center-align">{{ clientShow.client.name}}</h1>
-      <img class="clientProfile responsive-img col s3 offset-s3" ng-src="{{clientShow.client.image}}"/>
+      <h3 class="center-align">{{ clientShow.client.name}}</h3>
+      <img class="clientProfile responsive-img" ng-src="{{clientShow.client.image}}" style="height: 200px;width: 200px;"/>
   </div>
 <!--  Selected candidate info-->
-    <div class="card">
+    <div id="candidateSelector" class="card">
       <div class = "candidateSelectorProfile">
-        <img class="card-image" style="width:150px;height:200px;float:left;border-radius:10%;margin:5px;" ng-src="{{clientShow.selectedCandidateImage}}">
+        <div class="card-image">
+          <img style="min-width:150px; min-height:200px;"ng-src="{{clientShow.selectedCandidateImage}}">
+        </div>
         <span class="card-content">
-          <b>Candidate Info</b> :-
+          <h5>Candidate Info:</h5>
+            <b>Name:</b> {{clientShow.selectedCandidateName}}
           <br>
-            Name: {{clientShow.selectedCandidateName}}
+            <b>Distance From Client:</b> {{clientShow.distance}}
           <br>
-            Distance From Client: {{clientShow.distance}}
-          <br>
-            Approx. Travel Time: {{clientShow.distanceTime}}
+            <b>Approx. Travel Time:</b> {{clientShow.distanceTime}}
       </span>
       </div>
     </div>
@@ -34,8 +35,8 @@
       <ng-map class="clientMap" styles = "{{clientShow.gMapStyles}}" center="{{clientShow.clientLat}}, {{clientShow.clientLong}}" zoom="11">
         <!-- adds a marker for the client -->
         <marker position="{{clientShow.clientLat}}, {{clientShow.clientLong}}"></marker>
-        <!-- adds markers for candidates going to add filter:{{clientName}} to limit results once intial styling is done -->
-        <custom-marker ng-repeat="candidate in clientShow.candidates" position="{{candidate.latitude}}, {{candidate.longitude}}"  on-click="clientShow.getDistance(candidate.latitude, candidate.longitude, candidate.modeOfTransport.nameOfTransport, candidate.name, candidate.image)"><div><img class="candidateMapImages" src="{{candidate.image}}" alt=""> {{candidate.modeOfTransport.nameOfTransport}}</div></custom-marker>
+        <!-- adds markers for candidates going to add filter:{{clientName}} to limit results once backend is redone -->
+        <custom-marker ng-repeat="candidate in clientShow.candidates" position="{{candidate.latitude}}, {{candidate.longitude}}"  on-click="clientShow.getDistance(candidate.latitude, candidate.longitude, candidate.modeOfTransport.type, candidate.name, candidate.image)"><div><img class="candidateMapImages" src="{{candidate.image}}" alt=""></div></custom-marker>
       </ng-map>
         </div>
 </section>

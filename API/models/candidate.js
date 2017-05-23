@@ -6,7 +6,7 @@ const candidateSchema = mongoose.Schema({
   postcode: {type: String, maxlength: 9},
   latitude: {type: Number},
   longitude: {type: Number},
-  modeOfTransport: {nameOfTransport: {type: String, trim: true}, speed:{type: Number}}
+  modeOfTransport: {type: {type: String, trim: true}, speed:{type: Number}}
 });
 
 candidateSchema.set('toJSON', { getters: true, setters: true, virtuals: false });
